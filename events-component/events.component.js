@@ -24,27 +24,38 @@ class EventsComponent extends HTMLElement {
           width: 100%;
           border-collapse: collapse;
           margin: 16px 0;
+          font-family: sans-serif;
+          color: #041c27;
         }
         
         th,
         td {
-          border: 1px solid #ccc;
+          border: 1px solid #041c27;
           padding: 8px;
           text-align: left;
+          background-color: #ffffff;
         }
-        
+
+        td:hover {
+          background-color: #f2f2f3;
+        }
+
         th {
-          background-color: #f4f4f4;
+          background-color: #005c86;
+          color: white;
         }
 
         img {
-          width: 150px;
-          height: 150px;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          border: 1px solid #ccc;
         }
         
         .event-link {
-          color: #007bff;
+          color: #3894ff;
           text-decoration: none;
+          font-weight: bold;
         }
         
         .event-link:hover {
