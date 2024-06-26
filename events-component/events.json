@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Event Name 1",
+    "startdate": "2024-06-15",
+    "enddate": "2024-06-20",
+    "location": "Gent",
+    "description": "Description for Event Name 1",
+    "image": "https://loremflickr.com/800/500/ghent?random=1",
+    "link": "https://visit.gent.be/nl/agenda/event-name-1"
+  },
+  {
+    "name": "Event Name 2",
+    "startdate": "2024-07-01",
+    "enddate": "2024-07-05",
+    "location": "Gent",
+    "description": "Description for Event Name 2",
+    "image": "https://loremflickr.com/800/500/ghent?random=2",
+    "link": "https://visit.gent.be/nl/agenda/event-name-2"
+  },
+  {
+    "name": "Event Name 3",
+    "startdate": "2024-08-10",
+    "enddate": "2024-08-15",
+    "location": "Gent",
+    "description": "Description for Event Name 3",
+    "image": "https://loremflickr.com/800/500/ghent?random=3",
+    "link": "https://visit.gent.be/nl/agenda/event-name-3"
+  },
+  {
+    "name": "Event Name 4",
+    "startdate": "2024-09-01",
+    "enddate": "2024-09-05",
+    "location": "Gent",
+    "description": "Description for Event Name 4",
+    "image": "https://loremflickr.com/800/500/ghent?random=4",
+    "link": "https://visit.gent.be/nl/agenda/event-name-4"
+  },
+  {
+    "name": "Event Name 5",
+    "startdate": "2024-10-10",
+    "enddate": "2024-10-15",
+    "location": "Gent",
+    "description": "Description for Event Name 5",
+    "image": "https://loremflickr.com/800/500/ghent?random=5",
+    "link": "https://visit.gent.be/nl/agenda/event-name-5"
+  },
+  {
+    "name": "Event Name 6",
+    "startdate": "2024-11-20",
+    "enddate": "2024-11-25",
+    "location": "Gent",
+    "description": "Description for Event Name 6",
+    "image": "https://loremflickr.com/800/500/ghent?random=6",
+    "link": "https://visit.gent.be/nl/agenda/event-name-6"
+  },
+  {
+    "name": "Event Name 7",
+    "startdate": "2024-12-01",
+    "enddate": "2024-12-05",
+    "location": "Gent",
+    "description": "Description for Event Name 7",
+    "image": "https://loremflickr.com/800/500/ghent?random=7",
+    "link": "https://visit.gent.be/nl/agenda/event-name-7"
+  },
+  {
+    "name": "Event Name 8",
+    "startdate": "2025-01-10",
+    "enddate": "2025-01-15",
+    "location": "Gent",
+    "description": "Description for Event Name 8",
+    "image": "https://loremflickr.com/800/500/ghent?random=8",
+    "link": "https://visit.gent.be/nl/agenda/event-name-8"
+  },
+  {
+    "name": "Event Name 9",
+    "startdate": "2025-02-01",
+    "enddate": "2025-02-05",
+    "location": "Gent",
+    "description": "Description for Event Name 9",
+    "image": "https://loremflickr.com/800/500/ghent?random=9",
+    "link": "https://visit.gent.be/nl/agenda/event-name-9"
+  },
+  {
+    "name": "Event Name 10",
+    "startdate": "2025-03-10",
+    "enddate": "2025-03-15",
+    "location": "Gent",
+    "description": "Description for Event Name 10",
+    "image": "https://loremflickr.com/800/500/ghent?random=10",
+    "link": "https://visit.gent.be/nl/agenda/event-name-10"
+  }
+]
