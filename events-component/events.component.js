@@ -1,27 +1,24 @@
 class EventsComponent extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
 
-    // HTML template
+    // Load template and styles
     const template = `
-        <template id="events-template">
-          <table>
-            <thead>
-              <tr>
-                <th>Naam</th>
-                <th>Datum</th>
-                <th>Locatie</th>
-              </tr>
-            </thead>
-            <tbody id="events-container">
-              <!-- Evenementen worden hier ingeladen -->
-            </tbody>
-          </table>
-        </template>
+        <table>
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Naam</th>
+              <th>Datum</th>
+              <th>Locatie</th>
+            </tr>
+          </thead>
+          <tbody id="events-container">
+            <!-- Evenementen worden hier ingeladen -->
+          </tbody>
+        </table>
       `;
 
-    // CSS styles
     const styles = `
         table {
           width: 100%;
@@ -39,6 +36,11 @@ class EventsComponent extends HTMLElement {
         th {
           background-color: #f4f4f4;
         }
+
+        img {
+          width: 150px;
+          height: 150px;
+        }
         
         .event-link {
           color: #007bff;
@@ -53,7 +55,7 @@ class EventsComponent extends HTMLElement {
           table {
             font-size: 14px;
           }
-        
+          
           th,
           td {
             padding: 6px;
@@ -61,14 +63,11 @@ class EventsComponent extends HTMLElement {
         }
       `;
 
-    // Append template and styles to shadow DOM
-    const templateElement = document.createElement("template");
-    templateElement.innerHTML = template.trim();
-    this.shadowRoot.appendChild(templateElement.content.cloneNode(true));
-
-    const styleElement = document.createElement("style");
-    styleElement.textContent = styles.trim();
-    this.shadowRoot.appendChild(styleElement);
+    // Set innerHTML directly on the custom element
+    this.innerHTML = `
+        <style>${styles}</style>
+        ${template}
+      `;
 
     // After template and styles are loaded, load events
     this.loadEvents();
@@ -82,32 +81,31 @@ class EventsComponent extends HTMLElement {
       }
       const eventsData = await response.json();
 
-      // Sort
+      // Sort events by startdate
       eventsData.sort((a, b) => new Date(a.startdate) - new Date(b.startdate));
 
       console.log("Events data:", eventsData);
 
-      // Wait for template to be appended to shadow DOM -> not working
-      await customElements.whenDefined("events-component");
+      // Query for the container inside the component
+      const eventsContainer = this.querySelector("#events-container");
 
-      // Now query for the container inside the shadow DOM
-      const container = this.shadowRoot.querySelector("#events-container");
-      console.log("Events container:", container); // Check if container is found -> always null ??
+      console.log("Events container:", eventsContainer);
 
-      if (!container) {
-        throw new Error("Container element not found in the shadow DOM");
+      if (!eventsContainer) {
+        throw new Error("Container element not found in the component");
       }
 
       // Populate the container with event data
-      container.innerHTML = eventsData
+      eventsContainer.innerHTML = eventsData
         .map(
           (event) => `
-          <tr>
-            <td><a href="${event.link}" target="_blank" class="event-link">${event.name}</a></td>
-            <td>${event.startdate} - ${event.enddate}</td>
-            <td>${event.location}</td>
-          </tr>
-        `
+              <tr>
+                <td><img src="${event.image}"></td>
+                <td><a href="${event.link}" target="_blank" class="event-link">${event.name}</a></td>
+                <td>${event.startdate} - ${event.enddate}</td>
+                <td>${event.location}</td>
+              </tr>
+            `
         )
         .join("");
     } catch (error) {
